@@ -6,18 +6,22 @@ import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: BaseComponent,
-    canActivate: [AuthGuard]
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path: '**',
+    component: BaseComponent,
+  },
+  {
+    path: '',
+    component: BaseComponent,
+    canActivate: [AuthGuard],
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
