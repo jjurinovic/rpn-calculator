@@ -10,14 +10,15 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: '**',
+    path: 'calculator',
     component: BaseComponent,
+    canActivate: [AuthGuard]
   },
   {
-    path: '',
-    component: BaseComponent,
-    canActivate: [AuthGuard],
-  }
+    path: '**',
+    redirectTo: 'calculator',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
