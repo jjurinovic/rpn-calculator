@@ -1,0 +1,47 @@
+<div class="calculator">
+  <div class="calculator__input">
+    <input
+      type="text"
+      placeholder="Type expression here"
+      [(ngModel)]="inputValue"
+      (keydown.Enter)="calculate()"
+      (keydown)="keyDown($event)"
+    />
+    <small *ngIf="showError" class="calculator__error"
+      >Error: Check syntax</small
+    >
+  </div>
+  <!-- Submit button -->
+  <button class="calculator__calculate" (click)="calculate()">Calculate</button>
+
+  <!-- Result -->
+  <div class="calculator__result" *ngIf="result">= {{ result }}</div>
+
+  <!-- Operations operators -->
+  <div class="calculator__operators">
+    <div
+      class="calculator__operator"
+      *ngFor="let op of operators"
+      (click)="execute(op)"
+    >
+      {{ op }}
+    </div>
+  </div>
+
+  <!-- Numbers, c and decimal dot-->
+  <div class="calculator__buttons">
+    <div
+      class="calculator__button"
+      *ngFor="let btn of buttons"
+      (click)="execute(btn)"
+    >
+      {{ btn }}
+    </div>
+    <div
+      class="calculator__button calculator__button--full-width"
+      (click)="execute(' ')"
+    >
+      Space
+    </div>
+  </div>
+</div>
