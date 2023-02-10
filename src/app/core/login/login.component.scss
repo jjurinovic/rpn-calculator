@@ -1,0 +1,95 @@
+ @import './../../../scss/variables';
+
+ .login {
+    height: 100vh;
+    background-color: $yellow;
+    font-family: nunitoSans;
+
+    .login-wrapper {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     height: 100%;
+     flex-direction: column;
+    }
+
+    .login-title-wrapper {
+      .login-title {
+       font-size: 2.5rem;
+       text-align: center;
+       font-weight: bold;
+       color: #23192d;
+       border-bottom: 5px solid $red;
+       padding-bottom: 5px;
+       margin-bottom: 5px;
+      }
+
+      .login-subtitle {
+       font-size: 1.5rem;
+       text-align: center;
+       font-weight: 100;
+       color: $red;
+      }
+    }
+
+    .login-text {
+      font-size: 1.2rem;
+      color: $black;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+
+   .login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .login-form-row {
+      margin-bottom: 15px;
+
+      .login-form__label {
+        text-align: left;
+        display: block;
+        color: $black;
+      }
+
+      .login-form__input {
+        border: 1px solid $gray;
+        border-radius: 5px;
+        padding: 10px;
+        outline: none;
+        width: 200px;
+
+        &:focus {
+          border-color: $red;
+        }
+      }
+
+      .login-form-error {
+        color: $red-light;
+        font-size: .8rem;
+      }
+    }
+
+    .form-invalid-error {
+      color: $red-light;
+      margin-bottom: 15px;
+    }
+
+    .login-form__btn {
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      background-color: $red;
+      outline: none;
+      border: none;
+
+      &:hover {
+        background-color: $red-light;
+      }
+    }
+   }
+ }

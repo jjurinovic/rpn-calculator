@@ -1,1 +1,52 @@
-<p>login works!</p>
+<div class="login">
+  <div class="login-wrapper">
+    <!-- TITLE -->
+    <div class="login-title-wrapper">
+      <h2 class="login-title">Reverse Polish Notation</h2>
+      <h3 class="login-subtitle">CALCULATOR</h3>
+    </div>
+
+    <!-- Log In Text-->
+    <div class="login-text">Log In</div>
+
+    <form [formGroup]="loginForm" (submit)="submit($event)" class="login-form">
+      <!-- USERNAME -->
+      <div class="login-form-row">
+        <label class="login-form__label" for="username">Username:</label>
+        <input
+          class="login-form__input"
+          type="text"
+          formControlName="username"
+          required
+        />
+        <div class="login-form-error" *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched) && loginForm.controls['username'].errors?.['required']">
+          Username is required.
+        </div>
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="login-form-row">
+        <label class="login-form__label" for="username">Password:</label>
+        <input
+          class="login-form__input"
+          type="password"
+          formControlName="password"
+        />
+
+        <div
+        class="login-form-error"
+          *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched) && loginForm.controls['password'].errors?.['required']"
+        >
+          Password is required.
+        </div>
+      </div>
+
+      <!-- Error message for wrong credentials -->
+      <div *ngIf="showError" class="form-invalid-error">Username or Password is wrong!</div>
+
+      <!-- SUBMIT BUTTON -->
+      <button class="login-form__btn" type="submit">Login</button>
+
+    </form>
+  </div>
+</div>
