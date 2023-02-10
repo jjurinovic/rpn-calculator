@@ -1,4 +1,10 @@
-# RpnCalculator
+# Reverse Polish Notation calculator
+
+Reverse Polish Notation calculator
+
+Credentials for app:
+username: demo
+password: 1234
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
