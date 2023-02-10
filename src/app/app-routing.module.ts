@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/guards/auth.guard';
 import { BaseComponent } from './core/layout/base/base.component';
 import { LoginComponent } from './core/login/login.component';
+import { CalculatorComponent } from './features/calculator/components/calculator/calculator.component';
 
 const routes: Routes = [
   {
@@ -10,9 +11,17 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'calculator',
+    path: '',
     component: BaseComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        redirectTo: 'calculator',
+        pathMatch: 'full',
+      },
+      { path: 'calculator', component: CalculatorComponent },
+    ],
   },
   {
     path: '**',
