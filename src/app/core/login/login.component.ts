@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public submit(e: Event): void {
+  public submit(): void {
+    this.showError = false;
     if (this.loginForm.valid) {
       const loginValue = this.loginForm.value;
 
@@ -37,6 +38,8 @@ export class LoginComponent implements OnInit {
           this.showError = true;
         }
       );
+    } else {
+      this.showError = true;
     }
   }
 }
