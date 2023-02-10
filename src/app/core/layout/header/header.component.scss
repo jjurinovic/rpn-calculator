@@ -1,0 +1,23 @@
+@import './../../../../scss/variables';
+
+.header {
+  height: 50px;
+  border-bottom: 2px solid $red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .header__title {
+    font-family: nunitoSans;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $red;
+  }
+
+  .header__logout {
+    position: absolute;
+    right: 25px;
+    cursor: pointer;
+    color: $black;
+  }
+}
