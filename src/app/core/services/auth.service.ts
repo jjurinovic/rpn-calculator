@@ -16,7 +16,13 @@ export class AuthService {
   public loggedIn = false;
   public loggedInUser?: User;
 
-  constructor() { }
+  constructor() {
+    const user = localStorage.getItem('PRN_USER');
+    if (user)  {
+      this.loggedIn = true;
+      this.loggedInUser = DEMO_USER;
+    }
+  }
 
   public isAuthenticated(): boolean {
     return this.loggedIn;
@@ -27,6 +33,7 @@ export class AuthService {
     if (this.checkCredentials(username, password)) {
       this.loggedIn = true;
       this.loggedInUser = DEMO_USER;
+      localStorage.setItem('PRN_USER', 'user')
       return of(this.loggedInUser as User)
     } else {
       return throwError('error')
@@ -41,6 +48,7 @@ export class AuthService {
   public logout(): Observable<any> {
     this.loggedIn = false;
     this.loggedInUser = undefined;
+    localStorage.removeItem('PRN_USER');
     return of({})
   }
 }
