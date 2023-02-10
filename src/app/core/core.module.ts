@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { BaseComponent } from './layout/base/base.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [LoginComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ]
 })
 export class CoreModule { }
