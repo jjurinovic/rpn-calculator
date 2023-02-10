@@ -2,9 +2,9 @@
 
 Reverse Polish Notation calculator
 
-Credentials for app:
-username: demo
-password: 1234
+Credentials for app: <br />
+username: demo <br />
+password: 1234 <br />
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
