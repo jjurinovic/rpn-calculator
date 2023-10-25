@@ -1,0 +1,15 @@
+<div class="calculator__buttons">
+  <div
+    class="calculator__button"
+    *ngFor="let btn of buttons"
+    (click)="onClick(btn)"
+  >
+    {{ btn }}
+  </div>
+  <div
+    class="calculator__button calculator__button--full-width"
+    (click)="onClick(' ')"
+  >
+    Space
+  </div>
+</div>
