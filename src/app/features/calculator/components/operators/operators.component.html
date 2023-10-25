@@ -1,0 +1,9 @@
+<div class="calculator__operators">
+  <div
+    class="calculator__operator"
+    *ngFor="let operator of operators"
+    (click)="onClick(operator)"
+  >
+    {{ operator }}
+  </div>
+</div>
