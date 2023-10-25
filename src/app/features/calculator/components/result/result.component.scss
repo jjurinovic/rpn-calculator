@@ -1,0 +1,9 @@
+@import './../../../../../scss/variables';
+
+.calculator__result {
+  font-size: 3rem;
+  padding: 15px;
+  color: $red;
+  min-width: 100px;
+  font-weight: bold;
+}
