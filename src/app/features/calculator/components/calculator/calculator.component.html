@@ -1,4 +1,6 @@
 <div class="calculator">
+  <!-- Result -->
+<app-result  [result]="result" *ngIf="result"></app-result>
   <div class="calculator__input">
     <input
       type="text"
@@ -14,34 +16,10 @@
   <!-- Submit button -->
   <button class="calculator__calculate" (click)="calculate()">Calculate</button>
 
-  <!-- Result -->
-  <div class="calculator__result" *ngIf="result">= {{ result }}</div>
-
+  <hr/>
   <!-- Operations operators -->
-  <div class="calculator__operators">
-    <div
-      class="calculator__operator"
-      *ngFor="let op of operators"
-      (click)="execute(op)"
-    >
-      {{ op }}
-    </div>
-  </div>
+  <app-operators (execute)="execute($event)"></app-operators>
 
   <!-- Numbers, c and decimal dot-->
-  <div class="calculator__buttons">
-    <div
-      class="calculator__button"
-      *ngFor="let btn of buttons"
-      (click)="execute(btn)"
-    >
-      {{ btn }}
-    </div>
-    <div
-      class="calculator__button calculator__button--full-width"
-      (click)="execute(' ')"
-    >
-      Space
-    </div>
-  </div>
+  <app-calculator-buttons (execute)="execute($event)"></app-calculator-buttons>
 </div>

@@ -6,22 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.scss'],
 })
 export class CalculatorComponent {
-  public buttons = [...Array(10).keys(), 'C', 0, '.'];
-  public operators = ['+', '-', '*', '/'];
 
   public inputValue: string = '';
   public result?: number;
   public showError: boolean = false;
 
-  constructor() {
-    // remove zero from buttons
-    this.buttons.shift();
-  }
   /** Method for resrictring entering wrong characters through input */
   public keyDown(event: any) {
     const pattern = /[0-9\+/\-/\./\//\*/\\/ ]/;
-
-    if (!pattern.test(event.key) && event.key !== 'Backspace') {
+    if (!pattern.test(event.key) && event.key !== 'Backspace' &&  event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
       // invalid character, prevent input
       event.preventDefault();
     }
