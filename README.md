@@ -48,6 +48,9 @@ More about notation: https://en.wikipedia.org/wiki/Reverse_Polish_notation
 - password: 1234
 
 
+Credentials for app: <br />
+username: demo <br />
+password: 1234 <br />
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
